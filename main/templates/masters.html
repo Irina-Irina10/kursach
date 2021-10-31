@@ -1,0 +1,29 @@
+{% extends 'base-generation.html' %} {% load static %}
+{% block title %}
+<title>Мастера</title>
+{% endblock %}
+
+{% block content %}
+
+<section class="masters">
+    <h1 class="section-title">Мастера</h1>
+
+    <ul class="masters__list">
+        {% for master in masters %}
+        <li class="masters__item master">
+            <img src="{{master.photo.url}}" alt="" class="master__photo">
+            <p class="master__text master__fullname">
+                {{master.full_name}}
+            </p>
+            <p class="master__text master__position">
+                {{master.position}}
+            </p>
+            <p class="master__text master__seniority">
+                Опыт работы: {{master.seniority}}
+            </p>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+
+{% endblock %}

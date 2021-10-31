@@ -8,6 +8,17 @@ class Index(View):
     def get(self, request):
         return render(request, 'index.html')
 
+
 class About(View):
     def get(self, request):
         return render(request, 'about.html')
+
+
+class Masters(View):
+    def get(self, request):
+
+        context = {
+            "masters": Master.objects.all(),
+        }
+
+        return render(request, 'masters.html', context)

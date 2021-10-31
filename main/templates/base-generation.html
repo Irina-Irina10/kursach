@@ -23,7 +23,7 @@
                 <ul class="header__menu">
                     <li class="header__item {% if request.path == '/' %}current{% endif %}"><a href="{% url 'index' %}">Главная</a></li>
                     <li class="header__item {% if '/about/' in request.path %}current{% endif %}"><a href="{% url 'about' %}">О нас</a></li>
-                    <li class="header__item {% if '/master-and-vacancies/' in request.path %}current{% endif %}"><a href="">Мастера и вакансии</a></li>
+                    <li class="header__item {% if '/masters/' in request.path or '/vacancies/' in request.path %}current{% endif %}"><a href="{% url 'masters' %}">Мастера и вакансии</a></li>
                     <li class="header__item {% if '/salons/' in request.path %}current{% endif %}"><a href="">Салоны</a></li>
                     <li class="header__item {% if '/prices/' in request.path %}current{% endif %}"><a href="">Услуги и цены</a></li>
                 </ul>
