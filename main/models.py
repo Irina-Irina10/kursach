@@ -21,3 +21,9 @@ class Service(models.Model):
     name = models.CharField(max_length=100)
     price = models.IntegerField()
 
+class Sale(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+
+class Spectrum(models.Model):
+    name = models.CharField(max_length=100)

@@ -193,7 +193,7 @@ body {
             }
         }
         a {
-            font-size: 24px;
+            font-size: 18px;
             padding: 12px 15px;
             text-decoration: none;
             text-transform: uppercase;
@@ -207,10 +207,30 @@ body {
 }
 
 .main {
+    min-height: 700px;
     background-color: #8C7C7C;
     box-shadow: 0px 2px 8px 0px rgba(34, 60, 80, 0.2);
     &_gallery {
         padding: 100px 10vw 65px 10vw;
+    }
+
+    &__navbar {
+        display: flex;
+        justify-content: center;
+        padding: 50px 0;
+
+        &-link {
+            display: inline-block;
+
+            &:first-child {
+                margin-right: 100px;
+            }
+
+            &_current {
+                background-color: lighten($color: $main-color-1, $amount: 10);
+            }
+            @include button-link()
+        }
     }
 }
 
@@ -314,7 +334,7 @@ body {
     }
 }
 
-.masters {
+.tiles {
     .section-title {
         padding: 40px 0;
         text-align: center;
@@ -323,10 +343,11 @@ body {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding: 0 100px;
 }
 }
 
-.master {
+.tile {
     display:flex;
     flex-direction: column;
     padding: 25px 30px;
@@ -338,6 +359,15 @@ body {
     &__text {
         font-weight: 500;
 
+        &_standalone {
+            font-size: 22px;
+            text-align: center;
+        }
+
+        &_price {
+            text-align: center;
+        }
+
         &:not(&:last-child) {
             margin-bottom: 20px;
         }
@@ -345,5 +375,37 @@ body {
 
     &__photo {
         margin-bottom: 20px;
+
+        &_placeholder {
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            width: 300px;
+            background-color: lighten($color: $main-color-1, $amount: 4);
+        }
+    }
+}
+
+.salon {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 50px 0;
+    text-align: left;
+
+    &__image {
+        width: 50px;
+        margin-right: 20px;
+    }
+
+    &__text {
+        display: flex;
+        align-items: center;
+        font-size: 22px;
+        font-weight: 600;
+        margin: 50px 0;
+    }
+
+    &__wrapper {
+        text-align: center;
     }
 }

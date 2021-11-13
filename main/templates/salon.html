@@ -1,0 +1,29 @@
+{% extends 'base-generation.html' %} {% load static %}
+{% block title %}
+<title>Контакты</title>
+{% endblock %}
+
+{% block content %}
+<section class="tiles">
+    <h1 class="section-title">Салоны</h1>
+
+    <ul class="tiles__list">
+        {% for salon in salons %}
+        <li class="tiles__item tile">
+            <p class="tile__text tile__text_standalone">
+                {{salon.name}}
+            </p>
+            <p class="tile__text">
+                {{salon.address}}
+            </p>
+            <p class="tile__text">
+                {{salon.phone}}
+            </p>
+            <p class="tile__text">
+                {{salon.work_regime}}
+            </p>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

@@ -7,11 +7,9 @@
         Салоны красоты в центре Москвы Adore Beauty хотели подарить нашим гостям новое, современное пространство, которое отличалось бы от всего того, что было в индустрии красоты до этого.
     </p>
     <ul class="about__list">
-        <li class="about__item">Парикмахерские услуги</li>
-        <li class="about__item">Маникюр и педикюр</li>
-        <li class="about__item">Визаж</li>
-        <li class="about__item">Наращивание ресниц</li>
-        <li class="about__item">Эстетическую и аппаратную косметологию</li>
+        {% for item in spectrum %}
+        <li class="about__item">{{item.name}}</li>
+        {% endfor %}
     </ul>
 
     <div class="about__decorator"></div>

@@ -174,7 +174,7 @@ body {
   border-bottom: 5px solid #9A8F72;
 }
 .header__item a {
-  font-size: 24px;
+  font-size: 18px;
   padding: 12px 15px;
   text-decoration: none;
   text-transform: uppercase;
@@ -186,11 +186,38 @@ body {
 }
 
 .main {
+  min-height: 700px;
   background-color: #8C7C7C;
   box-shadow: 0px 2px 8px 0px rgba(34, 60, 80, 0.2);
 }
 .main_gallery {
   padding: 100px 10vw 65px 10vw;
+}
+.main__navbar {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+}
+.main__navbar-link {
+  display: inline-block;
+  font-size: 24px;
+  padding: 12px 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 10px;
+  background-color: #9A8F72;
+  color: #fff;
+  transition: 200ms;
+}
+.main__navbar-link:first-child {
+  margin-right: 100px;
+}
+.main__navbar-link_current {
+  background-color: #afa790;
+}
+.main__navbar-link:hover {
+  background-color: transparent;
+  color: #9A8F72;
 }
 
 .about {
@@ -300,17 +327,18 @@ body {
   background-color: #000;
 }
 
-.masters .section-title {
+.tiles .section-title {
   padding: 40px 0;
   text-align: center;
 }
-.masters__list {
+.tiles__list {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding: 0 100px;
 }
 
-.master {
+.tile {
   display: flex;
   flex-direction: column;
   padding: 25px 30px;
@@ -319,12 +347,47 @@ body {
   margin: 20px;
   background-color: rgba(255, 255, 255, 0.15);
 }
-.master__text {
+.tile__text {
   font-weight: 500;
 }
-.master__text:not(.master__text:last-child) {
+.tile__text_standalone {
+  font-size: 22px;
+  text-align: center;
+}
+.tile__text_price {
+  text-align: center;
+}
+.tile__text:not(.tile__text:last-child) {
   margin-bottom: 20px;
 }
-.master__photo {
+.tile__photo {
   margin-bottom: 20px;
+}
+.tile__photo_placeholder {
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  width: 300px;
+  background-color: #a3987e;
+}
+
+.salon {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 50px 0;
+  text-align: left;
+}
+.salon__image {
+  width: 50px;
+  margin-right: 20px;
+}
+.salon__text {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 50px 0;
+}
+.salon__wrapper {
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */

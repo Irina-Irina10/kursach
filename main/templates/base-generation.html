@@ -21,16 +21,35 @@
 
             <nav class="header__nav">
                 <ul class="header__menu">
-                    <li class="header__item {% if request.path == '/' %}current{% endif %}"><a href="{% url 'index' %}">Главная</a></li>
-                    <li class="header__item {% if '/about/' in request.path %}current{% endif %}"><a href="{% url 'about' %}">О нас</a></li>
-                    <li class="header__item {% if '/masters/' in request.path or '/vacancies/' in request.path %}current{% endif %}"><a href="{% url 'masters' %}">Мастера и вакансии</a></li>
-                    <li class="header__item {% if '/salons/' in request.path %}current{% endif %}"><a href="">Салоны</a></li>
-                    <li class="header__item {% if '/prices/' in request.path %}current{% endif %}"><a href="">Услуги и цены</a></li>
+                    <li class="header__item {% if request.path == '/' %}current{% endif %}"><a
+                            href="{% url 'index' %}">Главная</a></li>
+                    <li class="header__item {% if '/about/' in request.path %}current{% endif %}"><a
+                            href="{% url 'about' %}">О нас</a></li>
+                    <li
+                        class="header__item {% if '/masters/' in request.path or '/vacancies/' in request.path %}current{% endif %}">
+                        <a href="{% url 'masters' %}">Мастера и вакансии</a></li>
+                    <li class="header__item {% if '/salon/' in request.path %}current{% endif %}"><a href="{% url 'salon' %}">Салоны</a>
+                    </li>
+                    <li class="header__item {% if '/services/' in request.path or '/sales/' in request.path %}current{% endif %}"><a href="{% url 'services' %}">Услуги и
+                            акции</a></li>
                 </ul>
             </nav>
         </header>
 
         <main class="main">
+
+            {% if '/vacancies/' in request.path or '/masters/' in request.path %}
+            <div class="main__navbar">
+                <a href="{% url 'masters' %}" class="main__navbar-link {% if '/masters/' in request.path %}main__navbar-link_current{% endif %}">Мастера</a>
+                <a href="{% url 'vacancies' %}" class="main__navbar-link {% if '/vacancies/' in request.path %}main__navbar-link_current{% endif %}">Вакансии</a>
+            </div>
+            {% elif '/services/' in request.path or '/sales/' in request.path %}
+            <div class="main__navbar">
+                <a href="{% url 'services' %}" class="main__navbar-link {% if '/services/' in request.path %}main__navbar-link_current{% endif %}">Услуги</a>
+                <a href="{% url 'sales' %}" class="main__navbar-link {% if '/sales/' in request.path %}main__navbar-link_current{% endif %}">Акции</a>
+            </div>
+            {% endif %}
+
             {% block content %}{% endblock %}
         </main>
 

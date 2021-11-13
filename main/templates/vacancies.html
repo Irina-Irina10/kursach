@@ -4,26 +4,23 @@
 {% endblock %}
 
 {% block content %}
-
 <section class="tiles">
-    <h1 class="section-title">Мастера</h1>
+    <h1 class="section-title">Вакансии</h1>
 
     <ul class="tiles__list">
-        {% for master in masters %}
+        {% for vacancy in vacancies %}
         <li class="tiles__item tile">
-            <img src="{{master.photo.url}}" alt="" class="master__photo">
             <p class="tile__text tile__fullname">
-                {{master.full_name}}
+                {{vacancy.name}}
             </p>
             <p class="tile__text tile__position">
-                {{master.position}}
+                ЗП в месяц: {{vacancy.salary}}
             </p>
-            <p class="tile__text tile__seniority">
-                Опыт работы: {{master.seniority}}
+            <p class="tile__text">
+                Описание: {{vacancy.description}}
             </p>
         </li>
         {% endfor %}
     </ul>
 </section>
-
 {% endblock %}
